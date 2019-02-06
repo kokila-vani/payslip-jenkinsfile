@@ -1,23 +1,22 @@
 pipeline {
     agent any 
     tools {
-        maven 'localMaven' 
+        maven 'localmaven' 
     }
     stages {
         stage('BUILD') {
             steps {
-                build 'payslip-source'
+                build 'spring1-payslip'
             }
         }
         stage('TEST'){
             steps{
-                build 'payslip-test'
+                build 'spring1-test'
             }
         }
         stage('DEPLOY'){
             steps{
-                build 'payslip-build'
-                build 'payslip-deploy'
+                build 'spring1-deploy'
             }
         }
     }
